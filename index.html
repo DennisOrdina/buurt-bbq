@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="nl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Buurt BBQ Gerben van Manenstraat 2026</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Pacifico&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="quiz-shell">
+      <div class="sun" aria-hidden="true"></div>
+      <div class="palm palm-left" aria-hidden="true">✦</div>
+      <div class="palm palm-right" aria-hidden="true">✦</div>
+
+      <header class="topbar">
+        <a class="brand" href="#" aria-label="Start opnieuw">Buurt BBQ Gerben van Manenstraat 2026</a>
+        <div class="round-label"><span>Vraag</span><strong id="roundNumber">01</strong><span>/ 30</span></div>
+      </header>
+
+      <section class="quiz-card" aria-live="polite">
+        <div class="decade-pill" id="decadePill">1970s</div>
+        <p class="eyebrow">Muziekquiz · Zomereditie</p>
+        <h1 id="question">Welk zomernummer werd een wereldhit in 1978?</h1>
+        <p class="hint" id="hint">Denk aan een discobal, witte pakken en zaterdagavondkoorts.</p>
+
+        <div class="timer-controls">
+          <button class="start-button" id="startButton" type="button"><span aria-hidden="true">▶</span> Start timer</button>
+          <p id="timerStatus">Start de timer zodra het fragment begint.</p>
+        </div>
+
+        <div class="timer-panel" id="timer" aria-live="polite" aria-label="Resterende tijd">
+          <span class="timer-caption">Resterende tijd</span>
+          <strong id="timerDisplay">00:10</strong>
+          <span class="timer-caption">seconden</span>
+        </div>
+
+        <div class="answers" id="answers"></div>
+
+        <div class="card-footer">
+          <span class="answer-note"><span class="score-dot"></span>Noteer je antwoord op papier</span>
+          <div class="footer-actions"><button class="previous-button" id="previousButton" type="button">← Vorige</button><button class="next-button" id="nextButton" type="button">Volgende vraag <span>→</span></button></div>
+        </div>
+      </section>
+
+      <div class="progress" aria-label="Quizvoortgang"><div id="progressFill"></div></div>
+      <p class="host-tip">Speel de muziekfragmenten op jouw eigen manier af en navigeer vrij door de vragen.</p>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
