@@ -1,35 +1,39 @@
-const questions = [
-  ["1970s", "In welk jaar won ABBA het Eurovisie Songfestival met 'Waterloo'?", "Muziekgeschiedenis", ["1972", "1974", "1976", "1978"], 1, "0GjEhVFGZW8afUYGChu3Rr"],
-  ["1980s", "Welke dansbeweging maakte Michael Jackson tijdens een tv-optreden met dit nummer wereldberoemd?", "Popcultuur", ["Moonwalk", "Robot", "Running man", "Electric slide"], 0, "5ChkMS8OtdzJeqyybCc9R5"],
-  ["1980s", "Hoe heet de tegenstander van Rocky in de film waarvoor dit nummer werd gemaakt?", "Film", ["Clubber Lang", "Ivan Drago", "Apollo Creed", "Tommy Gunn"], 0, "2HHtWyy5CgaQbC7XSoOb0e"],
-  ["Nederlandse klassiekers", "Welke stad bezingt deze Nederlandse klassieker?", "Plaats", ["Rotterdam", "Utrecht", "Amsterdam", "Den Haag"], 2, "0he0jeqHPH4W5Aw849W6ES"],
-  ["1970s", "Welk instrument hoor je meteen in de intro?", "Instrument", ["Saxofoon", "Trompet", "Dwarsfluit", "Mondharmonica"], 0, "2x7JPx4lQ6xm4ba5ughsvM"],
+const questionData = [
+  ["1970s", "In welke Engelse badplaats won ABBA het Eurovisie Songfestival met 'Waterloo'?", "Muziekgeschiedenis", ["Brighton", "Blackpool", "Bristol", "Bournemouth"], 0, "0GjEhVFGZW8afUYGChu3Rr"],
+  ["1980s", "Op welk album uit 1982 staat dit Michael Jackson-nummer?", "Album", ["Bad", "Thriller", "Off the Wall", "Dangerous"], 1, "5ChkMS8OtdzJeqyybCc9R5"],
+  ["1980s", "Uit welke Amerikaanse stad komt bokser Rocky Balboa?", "Film", ["Chicago", "Philadelphia", "Boston", "Detroit"], 1, "2HHtWyy5CgaQbC7XSoOb0e"],
+  ["1970s", "Waarvoor staan de letters ELO?", "Muziekgeschiedenis", ["Electric Light Orchestra", "European Live Orchestra", "Electric Love Organisation", "English Light Orchestra"], 0, "2RlgNHKcydI9sayD2Df2xp"],
+  ["1970s", "In welke stad ligt de straat die dit nummer zijn titel gaf?", "Muziekgeschiedenis", ["Londen", "Edinburgh", "Dublin", "Liverpool"], 0, "2x7JPx4lQ6xm4ba5ughsvM"],
   ["1980s", "Welke animatietechniek maakt de videoclip bij dit nummer zo herkenbaar?", "Videoclip", ["Rotoscoping", "Stop-motion", "Kleianimatie", "Pixilation"], 0, "2WfaOiMkCvy7F5fcp2zZ8L"],
-  ["1990s", "In welke sitcom hoor je dit liedje in de opening?", "TV-serie", ["Friends", "Seinfeld", "The Fresh Prince", "Full House"], 0, "7MZOtq8HEcSVxDHc4kDGWF"],
+  ["1990s", "Welke acteur speelde Ross Geller in de sitcom bij dit nummer?", "TV-serie", ["Matt LeBlanc", "David Schwimmer", "Matthew Perry", "Paul Rudd"], 1, "7MZOtq8HEcSVxDHc4kDGWF"],
   ["1990s", "Welke Spice Girl droeg de bijnaam 'Sporty Spice'?", "Popcultuur", ["Mel C", "Emma Bunton", "Mel B", "Geri Halliwell"], 0, "1Je1IMUlBXcx1Fz0WE7oPT"],
-  ["1990s", "Uit welke film komt de iconische ballad die je nu hoort?", "Film", ["The Bodyguard", "Titanic", "Pretty Woman", "Ghost"], 1, "33LC84JgLvK2KuW43MfaNq"],
-  ["1990s", "Welke Gallagher-broer schreef dit nummer?", "Songwriting", ["Noel", "Liam", "Paul", "Geen van beiden"], 0, "7ouMYWpwJ422jRcDASZB7P"],
-  ["2000s", "Welke dansfilm maakte dit nummer extra beroemd?", "Film", ["Save the Last Dance", "Step Up", "Dirty Dancing: Havana Nights", "Honey"], 1, "4JpKVNYnVcJ8tuMKjAj50A"],
-  ["2000s", "Welke helft van OutKast neemt de zang van dit nummer voor zijn rekening?", "Artiest", ["André 3000", "Big Boi", "CeeLo Green", "Pharrell Williams"], 0, "2PpruBYCo4H7WOBJ7Q2EwM"],
+  ["1990s", "Welke regisseur maakte de film bij deze iconische ballad?", "Film", ["Steven Spielberg", "James Cameron", "Ridley Scott", "Ron Howard"], 1, "33LC84JgLvK2KuW43MfaNq"],
+  ["2010s", "In welk jaar werd dit nummer uitgebracht?", "Muziekgeschiedenis", ["2017", "2019", "2021", "2023"], 1, "3RauEVgRgj1IuWdJ9fDs70"],
+  ["2000s", "Welke acteur speelt de hoofdrol in de dansfilm die bij dit nummer hoort?", "Film", ["Zac Efron", "Channing Tatum", "Ryan Gosling", "Chris Evans"], 1, "4JpKVNYnVcJ8tuMKjAj50A"],
+  ["1980s", "Welke band zingt dit nummer?", "Artiest", ["Guns N' Roses", "Bon Jovi", "Aerosmith", "AC/DC"], 0, "7o2CTH4ctstm8TNelqjb51"],
   ["2000s", "Welk land hoort bij deze wereldhit 'Dragostea Din Tei'?", "Land", ["Roemenië", "Moldavië", "Bulgarije", "Hongarije"], 1, "7CnnGGBLuuu9cawoiHPLl4"],
   ["2000s", "Welke titel droeg Beyoncé's eerste soloalbum, waarop dit nummer stond?", "Album", ["B'Day", "Dangerously in Love", "4", "I Am... Sasha Fierce"], 1, "5IVuqXILoxVWvWEPm82Jxr"],
-  ["2000s", "Uit welke Amerikaanse stad komt de band achter dit nummer?", "Herkomst", ["Las Vegas", "Los Angeles", "Seattle", "Austin"], 0, "003vvx7Niy0yvhvHt4a68B"],
-  ["2010s", "Welke animatiefilm maakte dit nummer wereldwijd extra groot?", "Film", ["Despicable Me 2", "Coco", "Sing", "Inside Out"], 0, "60nZcImufyMA1MKQY3dcCH"],
-  ["2010s", "Wie werkte samen met Daft Punk aan deze hit?", "Samenwerking", ["Bruno Mars", "Pharrell Williams", "The Weeknd", "Justin Timberlake"], 1, "69kOkLUCkxIZYexIgSG8rq"],
-  ["2010s", "Op welke Nederlandse feestdag werd dit lied een vaste afsluiter?", "Traditie", ["Koningsdag", "Bevrijdingsdag", "Sinterklaas", "Carnaval"], 0, "4ZtFanR9U6ndgddUvNcjcG"],
-  ["2010s", "Welke sportcompetitie gebruikte dit nummer als bekendste WK-lied?", "Sport", ["EK voetbal", "WK voetbal", "Olympische Spelen", "Tour de France"], 1, "6bNB5gxFX6Q87DbQWb8OWZ"],
-  ["2010s", "Welke film uit 2018 leverde deze krachtige duet-hit op?", "Film", ["La La Land", "A Star Is Born", "Bohemian Rhapsody", "Mamma Mia! Here We Go Again"], 1, "2VxeLyX666F8uXCJ0dZF8B"],
-  ["2020s", "Welke serie gaf dit Kate Bush-nummer een enorme comeback?", "TV-serie", ["Wednesday", "Stranger Things", "Euphoria", "The Crown"], 1, "29d0nY7TzCoi22XBqDQkiP"],
-  ["2020s", "Wie zingt deze synthpop-hit 'Blinding Lights'?", "Artiest", ["The Weeknd", "Harry Styles", "Post Malone", "Bruno Mars"], 0, "0VjIjW4GlUZAMYd2vXMi3b"],
+  ["2000s", "Welke voornaam heeft de zanger van The Killers?", "Artiest", ["Dave", "Brandon", "Brendan", "Bryan"], 1, "003vvx7Niy0yvhvHt4a68B"],
+  ["2010s", "Welke acteur spreekt de stem in van Gru uit de film bij dit nummer?", "Film", ["Steve Carell", "Ben Stiller", "Jim Carrey", "Owen Wilson"], 0, "60nZcImufyMA1MKQY3dcCH"],
+  ["2010s", "Uit welk land komt het duo Daft Punk?", "Muziekgeschiedenis", ["België", "Frankrijk", "Canada", "Verenigd Koninkrijk"], 1, "69kOkLUCkxIZYexIgSG8rq"],
+  ["2000s", "Welke groep zingt dit nummer?", "Artiest", ["The Pussycat Dolls", "Black Eyed Peas", "OutKast", "LMFAO"], 1, "4vp2J1l5RD4gMZwGFLfRAu"],
+  ["2010s", "In welk land werd het WK voetbal van 2010 gehouden?", "Sport", ["Brazilië", "Zuid-Afrika", "Duitsland", "Japan"], 1, "6bNB5gxFX6Q87DbQWb8OWZ"],
+  ["2010s", "Welke acteur speelt naast Lady Gaga in de film bij deze duet-hit?", "Film", ["Ryan Gosling", "Bradley Cooper", "Hugh Jackman", "Matt Damon"], 1, "2VxeLyX666F8uXCJ0dZF8B"],
+  ["2020s", "In welk jaar verscheen dit Kate Bush-nummer oorspronkelijk?", "Muziekgeschiedenis", ["1979", "1985", "1991", "1997"], 1, "29d0nY7TzCoi22XBqDQkiP"],
+  ["2020s", "Wat is de voornaam van The Weeknd?", "Artiest", ["Abel", "Adam", "Amir", "Alex"], 0, "0VjIjW4GlUZAMYd2vXMi3b"],
   ["2020s", "Op welk ouder nummer wordt deze hit vaak gezien als een antwoord?", "Muziekverband", ["When I Was Your Man", "Grenade", "Locked Out of Heaven", "Just the Way You Are"], 0, "4DHcnVTT87F0zZhRPYmZ3B"],
-  ["2020s", "In welke film is 'What Was I Made For?' te horen?", "Film", ["Barbie", "Wonka", "Oppenheimer", "Inside Out 2"], 0, "6wf7Yu7cxBSPrRlWeSeK0Q"],
-  ["2020s", "Welke artiest vertegenwoordigde Nederland met dit nummer op het Eurovisiepodium?", "Eurovisie", ["Joost", "Claude", "Duncan Laurence", "S10"], 0, "0uHrMbMv3c78398pIANDqR"],
+  ["1990s", "Welke band zingt dit nummer?", "Artiest", ["The Corrs", "The Cranberries", "U2", "The Cardigans"], 1, "7EZC6E7UjZe63f1jRmkWxt"],
+  ["2020s", "In welk land vond het Eurovisie Songfestival van 2024 plaats?", "Eurovisie", ["Zweden", "Nederland", "Zwitserland", "Oostenrijk"], 0, "0uHrMbMv3c78398pIANDqR"],
   ["2020s", "Op welk album van Sabrina Carpenter verscheen dit nummer?", "Album", ["Short n' Sweet", "emails i can't send", "Singular: Act II", "Evolution"], 0, "2qSkIjg1o9h3YT9RAgYN75"],
-  ["2020s", "Met welke artiest zingt ROSÉ hier samen?", "Samenwerking", ["Bruno Mars", "The Weeknd", "Jungkook", "Ed Sheeran"], 0, "5vNRhkKd0yEAg8suGBpjeY"],
-  ["2020s", "Welke Nederlandse band maakte deze festivalhit 'Noodgeval'?", "Artiest", ["Goldband", "Froukje", "De Jeugd van Tegenwoordig", "Maan"], 0, "2LcmbuYX7tyR4DWy3b273L"],
-  ["2020s", "Van welk album is dit nummer de afsluitende track?", "Album", ["HIT ME HARD AND SOFT", "Happier Than Ever", "When We All Fall Asleep, Where Do We Go?", "dont smile at me"], 0, "6dOtVTDdiauQNBQEDOtlAB"],
-  ["Finale", "Welke musical hoort bij deze onweerstaanbare ABBA-song?", "Musical", ["Mamma Mia!", "Grease", "The Lion King", "Hairspray"], 0, "0GjEhVFGZW8afUYGChu3Rr"]
-].map(([decade, question, category, answers, correct]) => ({ decade, question, category, answers, correct }));
+  ["2010s", "Onder welke artiestennaam werd Tim Bergling wereldberoemd?", "Artiest", ["Kygo", "Avicii", "Calvin Harris", "Martin Garrix"], 1, "0nrRP2bk19rLc0orkWPQk2"],
+  ["2020s", "In welke stad werd Goldband opgericht?", "Nederlandse muziek", ["Den Haag", "Utrecht", "Groningen", "Eindhoven"], 0, "2LcmbuYX7tyR4DWy3b273L"],
+  ["1970s", "Welke band zingt dit nummer?", "Artiest", ["Queen", "The Rolling Stones", "The Beatles", "Pink Floyd"], 0, "4u7EnebtmKWzUH433cf5Qv"],
+  ["1970s", "In welk decennium werd dit disco-nummer uitgebracht?", "Muziekgeschiedenis", ["1960s", "1970s", "1980s", "1990s"], 1, "2grjqo0Frpf2okIBiifQKs"]
+].map(([decade, question, category, answers, correct, spotifyId]) => ({ decade, question, category, answers, correct, spotifyId }));
+
+// Vaste, gemengde quizvolgorde. Zo blijft de antwoordenlijst steeds gelijk aan de vragenronde.
+const questionOrder = [16, 4, 25, 8, 19, 2, 28, 12, 6, 22, 14, 1, 27, 9, 21, 11, 3, 24, 18, 7, 29, 15, 10, 23, 5, 26, 13, 20, 0, 17];
+const questions = questionOrder.map((index) => questionData[index]);
 
 let current = 0;
 let timerId;
