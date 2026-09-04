@@ -17,31 +17,41 @@
 
       <header class="topbar">
         <a class="brand" href="#" aria-label="Start opnieuw">Buurt BBQ Gerben van Manenstraat 2026</a>
-        <div class="round-label"><span>Vraag</span><strong id="roundNumber">01</strong><span>/ 30</span></div>
+        <div class="round-label"><span>Vraag</span><strong id="roundNumber">1</strong><span>/ 30</span></div>
       </header>
 
       <section class="quiz-card" aria-live="polite">
-        <div class="decade-pill" id="decadePill">1970s</div>
-        <p class="eyebrow">Muziekquiz · Zomereditie</p>
-        <h1 id="question">Welk zomernummer werd een wereldhit in 1978?</h1>
-        <p class="hint" id="hint">Denk aan een discobal, witte pakken en zaterdagavondkoorts.</p>
-
-        <div class="timer-controls">
-          <button class="start-button" id="startButton" type="button"><span aria-hidden="true">▶</span> Start timer</button>
-          <p id="timerStatus">Start de timer zodra het fragment begint.</p>
+        <div class="question-intro" id="questionIntro">
+          <div class="intro-number-line">
+            <span class="intro-label">Vraag</span>
+            <strong id="introQuestionNumber">1</strong>
+          </div>
+          <p>Luister eerst rustig naar het muziekfragment.</p>
+          <button class="reveal-button" id="revealQuestionButton" type="button">Toon de vraag <span>→</span></button>
         </div>
 
-        <div class="timer-panel" id="timer" aria-live="polite" aria-label="Resterende tijd">
-          <span class="timer-caption">Resterende tijd</span>
-          <strong id="timerDisplay">00:10</strong>
-          <span class="timer-caption">seconden</span>
-        </div>
+        <div class="question-content" id="questionContent" hidden>
+          <p class="eyebrow">Muziekquiz · Zomereditie</p>
+          <h1 id="question">Welk zomernummer werd een wereldhit in 1978?</h1>
+          <p class="hint" id="hint">Denk aan een discobal, witte pakken en zaterdagavondkoorts.</p>
 
-        <div class="answers" id="answers"></div>
+          <div class="timer-controls">
+            <button class="start-button" id="startButton" type="button"><span aria-hidden="true">▶</span> Start timer</button>
+            <p id="timerStatus">Start de timer zodra de vraag in beeld staat.</p>
+          </div>
 
-        <div class="card-footer">
-          <span class="answer-note"><span class="score-dot"></span>Noteer je antwoord op papier</span>
-          <div class="footer-actions"><button class="previous-button" id="previousButton" type="button">← Vorige</button><button class="next-button" id="nextButton" type="button">Volgende vraag <span>→</span></button></div>
+          <div class="timer-panel" id="timer" aria-live="polite" aria-label="Resterende tijd">
+            <span class="timer-caption">Resterende tijd</span>
+            <strong id="timerDisplay">00:15</strong>
+            <span class="timer-caption">seconden</span>
+          </div>
+
+          <div class="answers" id="answers"></div>
+
+          <div class="card-footer">
+            <span class="answer-note"><span class="score-dot"></span>Noteer je antwoord op papier</span>
+            <div class="footer-actions"><button class="previous-button" id="previousButton" type="button">← Vorige</button><button class="next-button" id="nextButton" type="button">Volgende vraag <span>→</span></button></div>
+          </div>
         </div>
       </section>
 
